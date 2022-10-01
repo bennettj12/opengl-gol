@@ -4,3 +4,4 @@
 
 /.vs/opengl-gol/v16
 **/Debug/**
+**.vcxproj**
