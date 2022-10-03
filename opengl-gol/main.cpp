@@ -42,6 +42,16 @@ int main() {
 	//Main rendering loop
 	while (!glfwWindowShouldClose(window)) {
 
+		// process inputs
+		processInput(window);
+
+		// Render
+			
+		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		// End rendering
+
 		//swaps color buffer containing color value of each pixel
 		glfwSwapBuffers(window);
 		//checks if any events are triggered & calls functions we register as callbacks
@@ -56,4 +66,10 @@ int main() {
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 	glViewport(0, 0, width, height);
+}
+
+void processInput(GLFWwindow* window) {
+	if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+		glfwSetWindowShouldClose(window, true);
+	}
 }
